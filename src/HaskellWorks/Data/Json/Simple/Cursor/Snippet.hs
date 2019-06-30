@@ -1,4 +1,7 @@
-module HaskellWorks.Data.Json.Simple.Value where
+module HaskellWorks.Data.Json.Simple.Cursor.Snippet
+  ( snippetPos
+  , snippet
+  ) where
 
 import Data.Maybe
 import HaskellWorks.Data.Json.Simple.Cursor
@@ -9,19 +12,6 @@ import HaskellWorks.Data.RankSelect.CsPoppy
 import qualified Data.ByteString                           as BS
 import qualified HaskellWorks.Data.BalancedParens          as BP
 import qualified HaskellWorks.Data.BalancedParens.RangeMin as RM
-
-data JsonValue
-  = JsonValues JsonValues
-  | JsonNull
-  | JsonNumber Double
-  | JsonString String
-  | JsonBoolean Bool
-  deriving (Eq, Show)
-
-data JsonValues
-  = JsonArray  [JsonValue]
-  | JsonObject [(String, JsonValue)]
-  deriving (Eq, Show)
 
 snippetPos :: JsonCursor BS.ByteString CsPoppy (RM.RangeMin CsPoppy) -> (Count, Count)
 snippetPos k = (kpa, kpz)
