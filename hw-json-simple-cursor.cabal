@@ -64,8 +64,8 @@ common word8                    { build-depends: word8                    >= 0.1
 common semigroups   { if impl(ghc <  8    ) { build-depends: semigroups     >= 0.16     && < 0.19 } }
 
 common config
-  default-language:   Haskell2010
-  ghc-options:        -Wall -O2 -msse4.2
+  default-language:     Haskell2010
+  ghc-options:          -Wall -O2 -msse4.2
   if flag(sse42)
     ghc-options: -msse4.2
   if flag(bmi2) && impl(ghc >= 8.4.1)
@@ -108,10 +108,10 @@ executable hw-json
           , semigroups
           , text
           , vector
-  main-is:            Main.hs
-  hs-source-dirs:     app
-  ghc-options:        -threaded -rtsopts -with-rtsopts=-N
-  build-depends:      hw-json-simple-cursor
+  main-is:              Main.hs
+  hs-source-dirs:       app
+  ghc-options:          -threaded -rtsopts -with-rtsopts=-N
+  build-depends:        hw-json-simple-cursor
   other-modules:
       App.Commands
       App.Commands.CreateIndex
@@ -129,12 +129,12 @@ test-suite hw-json-test
           , hw-rankselect
           , hw-rankselect-base
           , vector
-  type:               exitcode-stdio-1.0
-  main-is:            Spec.hs
-  build-depends:      hw-json-simple-cursor
-  hs-source-dirs:     test
-  ghc-options:        -threaded -rtsopts -with-rtsopts=-N
-  build-tools:        hspec-discover
+  type:                 exitcode-stdio-1.0
+  main-is:              Spec.hs
+  build-depends:        hw-json-simple-cursor
+  hs-source-dirs:       test
+  ghc-options:          -threaded -rtsopts -with-rtsopts=-N
+  build-tool-depends:   hspec-discover:hspec-discover
   other-modules:
       HaskellWorks.Data.Json.Simple.CursorSpec
       Paths_hw_json_simple_cursor
@@ -146,8 +146,8 @@ benchmark bench
           , directory
           , mmap
           , semigroups
-  type:               exitcode-stdio-1.0
-  main-is:            Main.hs
-  hs-source-dirs:     bench
-  build-depends:      hw-json-simple-cursor
-  other-modules:      Paths_hw_json_simple_cursor
+  type:                 exitcode-stdio-1.0
+  main-is:              Main.hs
+  hs-source-dirs:       bench
+  build-depends:        hw-json-simple-cursor
+  other-modules:        Paths_hw_json_simple_cursor
