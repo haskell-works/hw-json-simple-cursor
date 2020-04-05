@@ -63,8 +63,6 @@ common text                       { build-depends: text                       >=
 common vector                     { build-depends: vector                     >= 0.12       && < 0.13   }
 common word8                      { build-depends: word8                      >= 0.1        && < 0.2    }
 
-common semigroups   { if impl(ghc <  8    ) { build-depends: semigroups     >= 0.16     && < 0.19 } }
-
 common hw-json-simple-cursor
   build-depends:        hw-json-simple-cursor
 
@@ -111,7 +109,6 @@ executable hw-json
                       , lens
                       , mmap
                       , optparse-applicative
-                      , semigroups
                       , text
                       , vector
   main-is:              Main.hs
@@ -148,7 +145,6 @@ benchmark bench
                       , directory
                       , hw-json-simple-cursor
                       , mmap
-                      , semigroups
   type:                 exitcode-stdio-1.0
   main-is:              Main.hs
   hs-source-dirs:       bench
