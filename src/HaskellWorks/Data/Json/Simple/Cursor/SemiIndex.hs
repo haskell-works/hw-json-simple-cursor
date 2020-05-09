@@ -17,8 +17,8 @@ import qualified Data.Vector.Storable                                as DVS
 import qualified HaskellWorks.Data.Bits.Writer.Storable              as W
 import qualified HaskellWorks.Data.Json.Simple.Cursor.Internal.Word8 as W8
 
-{-# ANN module ("HLint: ignore Reduce duplication"  :: String) #-}
-{-# ANN module ("HLint: ignore Redundant do"        :: String) #-}
+{- HLINT ignore "Redundant do"        -}
+{- HLINT ignore "Reduce duplication"  -}
 
 data Context = InJson | InString | InEscape deriving (Eq, Show)
 

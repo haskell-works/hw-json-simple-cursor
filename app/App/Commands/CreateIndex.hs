@@ -21,8 +21,8 @@ import qualified HaskellWorks.Data.ByteString.Lazy              as LBS
 import qualified HaskellWorks.Data.Json.Simple.Cursor.SemiIndex as SISI
 import qualified System.IO.MMap                                 as IO
 
-{-# ANN module ("HLint: ignore Reduce duplication"  :: String) #-}
-{-# ANN module ("HLint: ignore Redundant do"        :: String) #-}
+{- HLINT ignore "Redundant do"        -}
+{- HLINT ignore "Reduce duplication"  -}
 
 runCreateIndex :: Z.CreateIndexOptions -> IO ()
 runCreateIndex opts = do
